@@ -13,9 +13,19 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+try:
+    from .config import CONFIG
+except ImportError:
+    msg = (
+        "You're missing a config.py file. This should contain secret project "
+        "settings as well as local configuration settings. Add this file "
+        "within your settings directory, alongside base.py"
+    )
+    raise Exception(msg)
+
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
+SECRET_KEY = CONFIG['SECRET_KEY']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -91,8 +101,10 @@ WSGI_APPLICATION = 'impakt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': CONFIG['DB_NAME'],
+        'USER': CONFIG['DB_USER'],
+        'PASSWORD': CONFIG['DB_PASSWORD'],
     }
 }
 
@@ -132,20 +144,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_DIR, 'static'),
+]
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
-
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, 'static'),
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATIC_ROOT = CONFIG['STATIC_ROOT']
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = CONFIG['MEDIA_ROOT']
 MEDIA_URL = '/media/'
 
 

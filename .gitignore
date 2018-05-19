@@ -1,3 +1,9 @@
+# Project Secrets
+impakt/settings/config.py
+
+# Filesystem
+*.swp
+
 # Javascript
 node_modules/
 
