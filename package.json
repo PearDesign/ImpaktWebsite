@@ -1,0 +1,22 @@
+{
+  "name": "impaktwebsite",
+  "version": "1.0.0",
+  "description": "Website for the Impakt Ethical Shopping Browser Extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PearDesign/ImpaktWebsite.git"
+  },
+  "author": "Pear Design",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PearDesign/ImpaktWebsite/issues"
+  },
+  "homepage": "https://github.com/PearDesign/ImpaktWebsite#readme",
+  "dependencies": {
+    "npm": "^6.0.1"
+  }
+}
