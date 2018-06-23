@@ -1,4 +1,5 @@
-{% load static wagtailuserbar %}
+{% load static %}
+{% load wagtailuserbar %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -22,6 +23,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/impakt.css' %}">
 
         {% block extra_css %}
@@ -30,15 +34,32 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+        <div class="container">
+            {% wagtailuserbar %}
+            <nav>
+                <div class="row">
+                    <img alt="Impakt" src="https://betheimpakt.com/wp-content/uploads/2017/06/Impakt-logo-reversed@3x.png.png?189db0" class="retina-logo-light"></li>
 
-        {% block content %}{% endblock %}
+                    <ul class="horizontal">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="https://www.kickstarter.com/projects/impakt/impakt-one-click-ethical-shopper">Kickstarter</a></li>
+                    </ul>
+                </div>
+            </nav>
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/impakt.js' %}"></script>
+            {% block content %}{% endblock %}
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
+            {# Global javascript #}
+            <script type="text/javascript" src="{% static 'js/impakt.js' %}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+            {% block extra_js %}
+                {# Override this in templates to add extra javascript #}
+            {% endblock %}
+        </div>
     </body>
 </html>

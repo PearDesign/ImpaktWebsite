@@ -36,6 +36,7 @@ SECRET_KEY = CONFIG['SECRET_KEY']
 INSTALLED_APPS = [
     'home',
     'search',
+    'blog',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+    'django_extensions',
 
     'django.contrib.admin',
     'django.contrib.auth',

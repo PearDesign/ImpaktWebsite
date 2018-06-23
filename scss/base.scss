@@ -1,0 +1,41 @@
+$primary-color: #6FB0F8;
+$black: #000;
+
+
+body {
+  color: $primary-color;
+  font-family: "Open Sans";
+
+    nav {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-top: 10px;
+
+        img {
+            width:150px;
+            max-height:150px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: inline;
+            float: right;
+            padding-top: 15px;
+        }
+
+        li {
+            display: inline;
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+
+        }
+
+        a{
+            color: $black;
+            font-size: 18px;
+            border-bottom: 2px solid;
+        }
+
+    }
+
+}
