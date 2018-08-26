@@ -17,6 +17,9 @@ class ProductListView(ListAPIView):
 class ProductDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = ProductSerializer
 
+    def get_queryset(self):
+        return Product.objects.all()
+
     def get_object(self):
         queryset = self.get_queryset()
         query_filter = {
