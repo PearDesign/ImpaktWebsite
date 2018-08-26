@@ -1,4 +1,6 @@
 # Project Secrets
+bin/
+logs/
 impakt/settings/config.py
 impakt/settings/secrets.py
 
