@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import raven
 from .config import CONFIG
 from .secrets import SECRETS
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
+    'raven.contrib.django.raven_compat',
     'rest_framework',
 
     'accounts',
@@ -134,4 +136,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ],
+}
+
+# Errors and Logs
+RAVEN_CONFIG = {
+    'dsn': SECRETS['RAVEN_DSN'],
+    'release': raven.fetch_git_sha(os.path.abspath(os.path.dirname(BASE_DIR))),
 }
