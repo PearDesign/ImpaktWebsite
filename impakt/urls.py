@@ -22,7 +22,7 @@ from products.views import ProductListView
 admin.site.site_header = "Impakt-NYU Admin Panel"
 
 urlpatterns = [
-    path('products/<slug:search_term>/', ProductListView.as_view()),
-    path('product/<slug:seller__ASIN>/<slug:product_slug>/', ProductDetailView.as_view()),
+    path('api/v1/products/<slug:search_term>/', ProductListView.as_view()),
+    path('api/v1/product/<slug:seller__ASIN>/<slug:product_slug>/', ProductDetailView.as_view()),
     path('admin/', admin.site.urls),
 ]
