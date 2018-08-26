@@ -10,6 +10,9 @@ class SearchTerm(models.Model):
     '''
     term = models.CharField(max_length=256, unique=True)
 
+    def __str__(self):
+        return self.term.title()
+
     def save(self, *args, **kwargs):
         self.term = self.term.lower()
         super(SearchTerm, self).save(*args, **kwargs)
