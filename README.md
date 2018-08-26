@@ -30,4 +30,3 @@ Repository for the Impakt Website and API
     `python manage.py runserver`
 
 And you're done!
-
