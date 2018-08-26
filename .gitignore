@@ -1,5 +1,6 @@
 # Project Secrets
 impakt/settings/config.py
+impakt/settings/secrets.py
 
 # Filesystem
 *.swp
