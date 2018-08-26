@@ -129,7 +129,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+STATIC_ROOT = CONFIG['STATIC_ROOT']
+MEDIA_ROOT = CONFIG['MEDIA_ROOT']
 
 # Rest Framework
 REST_FRAMEWORK = {
