@@ -130,3 +130,10 @@ STATIC_URL = '/static/'
 
 # Django Taggit
 TAGGIT_CASE_INSENSITIVE = True
+
+# Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
+}
