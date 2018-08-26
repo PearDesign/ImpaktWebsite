@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from issues.serializers import ProductIssueSerializer
+from issues.serializers import SellerIssueSerializer
 from products.models import Product
 from products.models import SearchTerm
 from products.models import Seller
@@ -13,6 +14,7 @@ class SearchTermSerializer(serializers.ModelSerializer):
 
 
 class SellerSerializer(serializers.ModelSerializer):
+    seller_issues = SellerIssueSerializer(read_only=True, many=True)
 
     class Meta:
         exclude = ('id', )
