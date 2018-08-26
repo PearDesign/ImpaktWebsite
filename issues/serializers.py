@@ -7,12 +7,12 @@ from issues.models import SellerIssue
 class ProductIssueSerializer(serializers.ModelSerializer):
 
     class Meta:
-        exclude = ('id', )
+        exclude = ('id', 'product', )
         model = ProductIssue
 
 
 class SellerIssueSerializer(serializers.ModelSerializer):
 
     class Meta:
-        exclude = ('id', )
+        exclude = ('id', 'seller', )
         model = SellerIssue
