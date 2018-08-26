@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from issues.admin import ProductIssueInline
+from issues.admin import SellerIssueInline
 from products.models import Product
 from products.models import SearchTerm
 from products.models import Seller
@@ -12,9 +14,13 @@ class SearchTermAdmin(admin.ModelAdmin):
 
 @admin.register(Seller)
 class SellerAdmin(admin.ModelAdmin):
-    pass
+    inlines = [
+        SellerIssueInline,
+    ]
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    pass
+    inlines = [
+        ProductIssueInline,
+    ]

@@ -1,11 +1,10 @@
 from rest_framework import serializers
-from taggit_serializer.serializers import TaggitSerializer, TagListSerializerField
-
+from issues.serializers import ProductIssueSerializer
 from products.models import Product
 from products.models import SearchTerm
 
 
-class SearchTermSerializer(TaggitSerializer, serializers.ModelSerializer):
+class SearchTermSerializer(serializers.ModelSerializer):
 
     class Meta:
         exclude = ('id', )
@@ -13,8 +12,8 @@ class SearchTermSerializer(TaggitSerializer, serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    product_issues = ProductIssueSerializer(read_only=True, many=True)
     search_terms = SearchTermSerializer(read_only=True, many=True)
-    tags = TagListSerializerField()
 
     class Meta:
         exclude = ('id', )

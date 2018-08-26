@@ -42,10 +42,9 @@ INSTALLED_APPS = [
 
     'django_extensions',
     'rest_framework',
-    'taggit',
-    'taggit_serializer',
 
     'accounts',
+    'issues',
     'products',
 ]
 
@@ -129,9 +128,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Django Taggit
-TAGGIT_CASE_INSENSITIVE = True
 
 # Rest Framework
 REST_FRAMEWORK = {
