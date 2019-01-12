@@ -5,16 +5,17 @@
 venv/
 *.pyc
 
-# Django
+# Backend
 MEDIAROOT/
 
-# Database
-db.sqlite3
-
-# dependencies
+# Frontend
 /node_modules
 /.pnp
 .pnp.js
+.sass-cache/
+
+# Database
+db.sqlite3
 
 # testing
 /coverage

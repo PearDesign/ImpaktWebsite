@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<div class='container'>
+	<nav>
+		<div class='left-side'>
+			<a href='{% url 'home' %}'>
+				<img src='{% static 'icons/logoBlueDark.svg' %}'/>
+			</a>
+		</div>
+		<div class='right-side'>
+			<a href='{% url 'home' %}'>Home</a>
+			<a href='/blog'>Blog</a>
+			<a target='_blank' href='https://www.kickstarter.com/projects/impakt/impakt-one-click-ethical-shopper'>Kickstarter</a>
+			<a href='{% url 'contact' %}'>Contact</a>
+		</div>
+	</nav>
+</div>

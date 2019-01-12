@@ -1,0 +1,15 @@
+@import '_normalize.scss';
+@import '_colors.scss';
+@import '_fonts.scss';
+@import '_homepage.scss';
+@import '_nav.scss';
+
+body {
+	background-color: $white;
+	font-family: "Open Sans", sans-serif;;
+}
+
+.container {
+	max-width: 1183px;
+	margin: 0 auto;
+}

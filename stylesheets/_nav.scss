@@ -1,0 +1,37 @@
+nav {
+	background-color: $white;
+
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+
+	height: 70px;
+	box-sizing: border-box;
+	padding: 8px;
+	position: sticky;
+	top: 0;
+	.left-side, .right-side {
+		a {
+			padding: 0px 16px 4px 16px;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+	.right-side {
+		a {
+			color: $dark-gray;
+			font-family: "Open Sans";
+			font-weight: 700;
+			border-bottom: 2px $white solid;
+			&:hover {
+				border-bottom: 2px $dark-gray solid;
+			}
+		}
+	}
+	.left-side {
+		img {
+			max-width: 200px;
+			max-height: 50px;
+		}
+	}
+}

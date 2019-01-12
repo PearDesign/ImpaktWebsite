@@ -1,0 +1,12 @@
+{% load static %}
+<html>
+	<head>
+		<title>Impakt</title>
+		<link rel="stylesheet" type="text/css" href='{% static 'style.css' %}'/>
+	</head>
+	<body>
+		{% include 'public/nav.html' %}
+		{% block content %}{% endblock %}
+		{% include 'public/footer.html' %}
+	</body>
+</html>

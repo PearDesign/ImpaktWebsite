@@ -1,0 +1,50 @@
+{% extends 'public/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class='homepage-hero'>
+	<img class='hero-image' src='{% static 'images/homepageBackground.png' %}'/>
+	<div class='hero-overlay'>
+		<div>
+			<img class='overlay-logo' src='{% static 'icons/logoBlueWhite.svg' %}'/>
+			<h1>One-Click Ethical Shopper</h1>
+		</div>
+	</div>
+</div>
+
+<section class='homepage-container know-who gray-background'>
+	<div class='section-content'>
+		<img src='{% static 'images/screenshots/knowWho.png' %}'/>
+		<div class='container-text'>
+			<div>
+				<h2>Know Who You're Buying From...</h2>
+				<p>View any company's sustainability, labor, and lobbying practices on the go.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class='homepage-container purchases blue-background'>
+	<div class='section-content'>
+		<div class='container-text'>
+			<div>
+				<h2>Purchases You Can Believe In...</h2>
+				<p>One-click alternative product recommendations</p>
+			</div>
+		</div>
+		<img src='{% static 'images/screenshots/alternativeProducts.png' %}'/>
+	</div>
+</section>
+
+<section class='homepage-container contact green-background'>
+	<div class='section-content'>
+		<div class='container-text'>
+			<div>
+				<h2>Get in touch to learn more.</h2>
+				<a class='link-btn' href='{% url 'contact' %}'>Contact</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
