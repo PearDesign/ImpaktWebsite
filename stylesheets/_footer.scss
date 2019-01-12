@@ -1,0 +1,18 @@
+footer {
+	border-top: 1px solid #e5e5e5;
+	padding: 32px;
+
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	.contact-item {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		img {
+			display: block;
+			height: 60px;
+		}
+	}
+}

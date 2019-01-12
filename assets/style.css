@@ -306,6 +306,21 @@ template {
 @font-face {
   font-family: "Open Sans";
   src: url("/static/fonts/OpenSans-Regular.ttf"); }
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 32px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around; }
+  footer .contact-item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center; }
+    footer .contact-item img {
+      display: block;
+      height: 60px; }
+
 .homepage-hero {
   color: #F8F8FF;
   overflow-x: hidden;
@@ -389,6 +404,71 @@ nav {
   nav .left-side img {
     max-width: 200px;
     max-height: 50px; }
+
+.blog-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 195px); }
+
+.blog-page, .blog-index-page {
+  display: flex;
+  justify-content: center;
+  max-width: 1182px; }
+  .blog-page img, .blog-index-page img {
+    object-fit: cover;
+    height: auto;
+    object-position: 50% 50%;
+    max-width: 100%; }
+  .blog-page .sidebar, .blog-index-page .sidebar {
+    position: sticky;
+    width: 100%;
+    max-width: 400px; }
+
+.blog-index-page .posts {
+  width: 100vw;
+  max-width: 800px; }
+  .blog-index-page .posts .post {
+    max-height: 300px;
+    overflow: hidden; }
+    .blog-index-page .posts .post h2 a {
+      color: #3E3A40;
+      text-decoration: none; }
+  .blog-index-page .posts .read-more {
+    color: #3E3A40;
+    display: block;
+    margin: 16px 0px;
+    font-weight: 700;
+    text-decoration: none; }
+
+.blog-header {
+  overflow-x: hidden; }
+  .blog-header img {
+    object-fit: cover;
+    height: 50vh;
+    width: 100vw; }
+  .blog-header .blog-title-wrapper {
+    background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.85) 33%, rgba(0, 0, 0, 0.1) 66%);
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    top: 70px; }
+  .blog-header .blog-title {
+    box-sizing: border-box;
+    color: #F8F8FF;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    position: absolute;
+    top: calc(50vh - 32px);
+    left: 0;
+    width: 100%; }
+    .blog-header .blog-title h1 {
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
 
 body {
   background-color: #F8F8FF;

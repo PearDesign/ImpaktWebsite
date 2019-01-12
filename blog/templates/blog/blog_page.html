@@ -1,15 +1,33 @@
 {% extends 'public/base.html' %}
 
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date }}</p>
+<div class='blog-header'>
+	{% if page.image %}
+	{% image page.image width-2000 %}
+	{% else %}
+	<svg class='header-image'>
+		<rect fill='#4A90E2' x='0' y='0' width='100%' height='100%'/>
+	</svg>
+	{% endif %}
+	<div class='blog-title-wrapper'>
+		<div class='blog-title'>
+			<h1>{{ page.title }}</h1>
+		</div>
+	</div>
+</div>
 
-    <div class="intro">{{ page.intro }}</div>
-
-    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-
+<div class='blog-wrapper'>
+	<div class='blog-page'>
+		<div class='blog-content'>
+			{{ page.specific.body }}
+			<p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
