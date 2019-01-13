@@ -319,6 +319,7 @@ footer {
     text-align: center; }
     footer .contact-item img {
       display: block;
+      object-fit: contain;
       height: 60px; }
 
 .homepage-hero {
@@ -394,6 +395,8 @@ nav {
     padding: 0px 16px 4px 16px;
     text-decoration: none;
     text-transform: uppercase; }
+    nav .left-side a img, nav .right-side a img {
+      object-fit: contain; }
   nav .right-side a {
     color: #3E3A40;
     font-family: "Open Sans";
@@ -410,69 +413,118 @@ nav {
   justify-content: center;
   min-height: calc(100vh - 195px); }
 
-.blog-page, .blog-index-page {
+.blog-index-page img {
+  object-fit: cover;
+  width: 100%; }
+.blog-index-page .header {
+  background-fit: cover;
+  background-position: center center;
+  color: #F8F8FF;
+  height: 40vh;
+  text-align: center;
   display: flex;
+  align-items: center;
+  justify-content: center; }
+  .blog-index-page .header h2.subheadline {
+    font-size: 21px; }
+.blog-index-page .blog-tiles {
+  display: flex;
+  flex-wrap: wrap; }
+  .blog-index-page .blog-tiles .tile {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    max-width: 350px;
+    margin: 16px; }
+    .blog-index-page .blog-tiles .tile img {
+      width: 350px;
+      height: 200px; }
+    .blog-index-page .blog-tiles .tile h2, .blog-index-page .blog-tiles .tile h3 {
+      padding: 0px 16px; }
+    .blog-index-page .blog-tiles .tile h2 {
+      font-size: 18px;
+      height: 60px; }
+
+.blog-page {
+  flex-grow: 1;
   justify-content: center;
+  padding: 0px 32px;
+  text-align: center;
   max-width: 1182px; }
-  .blog-page img, .blog-index-page img {
+  .blog-page img {
     object-fit: cover;
     height: auto;
     object-position: 50% 50%;
-    max-width: 100%; }
-  .blog-page .sidebar, .blog-index-page .sidebar {
-    position: sticky;
-    width: 100%;
-    max-width: 400px; }
-
-.blog-index-page .posts {
-  width: 100vw;
-  max-width: 800px; }
-  .blog-index-page .posts .post {
-    max-height: 300px;
-    overflow: hidden; }
-    .blog-index-page .posts .post h2 a {
-      color: #3E3A40;
-      text-decoration: none; }
-  .blog-index-page .posts .read-more {
-    color: #3E3A40;
-    display: block;
-    margin: 16px 0px;
-    font-weight: 700;
-    text-decoration: none; }
-
-.blog-header {
-  overflow-x: hidden; }
-  .blog-header img {
-    object-fit: cover;
-    height: 50vh;
-    width: 100vw; }
-  .blog-header .blog-title-wrapper {
-    background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.85) 33%, rgba(0, 0, 0, 0.1) 66%);
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    justify-content: left;
-    width: 100%;
-    height: 50vh;
-    position: absolute;
-    top: 70px; }
-  .blog-header .blog-title {
-    box-sizing: border-box;
-    color: #F8F8FF;
-    text-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
-    padding: 16px;
-    position: absolute;
-    top: calc(50vh - 32px);
-    left: 0;
+    max-width: 100%;
     width: 100%; }
-    .blog-header .blog-title h1 {
-      position: absolute;
-      bottom: 0;
-      width: 100%; }
+  .blog-page .blog-header {
+    margin-bottom: 32px; }
+    .blog-page .blog-header h1 {
+      font-weight: 700;
+      font-size: 36px; }
+  .blog-page .blog-wrapper {
+    padding: 32px 0px;
+    max-width: 1183px;
+    text-align: left; }
+    .blog-page .blog-wrapper .blog-content {
+      width: 800px; }
+
+.sidebar {
+  position: sticky;
+  flex-shrink: 0;
+  padding: 0px 32px;
+  width: 240px; }
+  .sidebar .promo {
+    font-weight: 700;
+    font-size: 15px;
+    padding: 32px 0px;
+    border-bottom: 1px #DDD solid;
+    border-top: 1px #DDD solid; }
+    .sidebar .promo .description {
+      text-align: center; }
+    .sidebar .promo p {
+      display: block; }
+    .sidebar .promo a {
+      background-color: #4A90E2;
+      display: block;
+      box-sizing: border-box;
+      color: #F8F8FF;
+      height: 30px;
+      width: 151px;
+      text-align: center;
+      text-decoration: none;
+      padding: 4px 16px;
+      border-radius: 16px;
+      margin: 8px auto; }
+  .sidebar .related-posts h2 {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: left; }
+  .sidebar .related-posts a {
+    text-decoration: none;
+    color: #3E3A40; }
+  .sidebar .related-posts .post-thumbnail {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 16px; }
+    .sidebar .related-posts .post-thumbnail .thumbnail-image {
+      flex-shrink: 0; }
+      .sidebar .related-posts .post-thumbnail .thumbnail-image img {
+        object-fit: cover;
+        width: 70px;
+        height: 70px; }
+    .sidebar .related-posts .post-thumbnail .thumbnail-title {
+      padding-left: 8px;
+      text-align: left;
+      font-weight: 700; }
 
 body {
   background-color: #F8F8FF;
   font-family: "Open Sans", sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #3E3A40; }
 
 .container {
   max-width: 1183px;

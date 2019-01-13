@@ -1,22 +1,30 @@
 {% extends 'public/base.html' %}
 
+{% load staticfiles %}
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% block body_class %}template-blogindexpage{% endblock %}
 
 {% block content %}
-<div class='blog-wrapper'>
-	<div class='blog-index-page'>
-		<div class='posts'>
-		{% for post in page.get_children %}
-			<div class='post'>
-				<h2><a href='{% pageurl post %}'>{{ post.title }}</a></h2>
-				{{ post.specific.body }}
-			</div>
-			<a class='read-more' href='{% pageurl post %}'>Read More</a>
-		{% endfor %}
+<div class='blog-index-page'>
+	<div class='header' style="background-image: url('{{ page.image.file.url }}');">
+		<div>
+			<h1>{{ page.title }}</h1>
+			<h2>{{ page.subheadline }}</h2>
 		</div>
-		{% include 'blog/sidebar.html' %}
+	</div>
+	
+	<div class='container'>
+		<div class='blog-tiles'>
+			{% for post in page.get_children %}
+			<a href='{% pageurl post %}' class='tile'>
+				{% image post.specific.image max-2000x2000 %}
+				<h2>{{ post.title }}</h2>
+				<h3>By {{ page.owner.full_name }}</h3>
+			</a>
+			{% endfor %}
+		</div>
 	</div>
 </div>
 {% endblock %}

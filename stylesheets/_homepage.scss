@@ -55,7 +55,7 @@
 	}
 
 	.section-content {
-		max-width: 1183px;
+		max-width: $max-width;
 		display: flex;
 		justify-content: center;
 		img {

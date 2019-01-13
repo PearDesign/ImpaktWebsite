@@ -1,6 +1,21 @@
 {% load wagtailcore_tags %}
 
 <div class='sidebar'>
-	<h1>{{ page.title }}</h1>
-	<div class='intro'>{{ page.intro|richtext }}</div>
+	<div class='promo'>
+		<div class='description'>{{ page.sidebar_intro|richtext }}</div>
+		<a href='#'>Add to Chrome</a>
+	</div>
+
+	<div class='related-posts'>
+		<h2>Related</h2>
+	{% if page.children %}
+		{% for child_page in self.children %}
+			{% include 'blog/components/postThumbnail.html' %}
+		{% endfor %}
+	{% else %}
+		{% for child_page in self.siblings %}
+			{% include 'blog/components/postThumbnail.html' %}
+		{% endfor %}
+	{% endif %}
+	</div>
 </div>

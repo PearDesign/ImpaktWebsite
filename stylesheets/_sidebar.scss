@@ -1,0 +1,64 @@
+.sidebar {
+	position: sticky;
+	flex-shrink: 0;
+	padding: 0px 32px;
+	width: 240px;
+	.promo {
+		font-weight: 700;
+		font-size: 15px;
+		padding: 32px 0px;
+		border-bottom: 1px #DDD solid;
+		border-top: 1px #DDD solid;
+		.description {
+			text-align: center;
+		}
+		p {
+			display: block;
+		}
+
+		a {
+			background-color: $blue;
+			display: block;
+			box-sizing: border-box;
+			color: $white;
+			height: 30px;
+			width: 151px;
+			text-align: center;
+			text-decoration: none;
+			padding: 4px 16px;
+			border-radius: 16px;
+			margin: 8px auto;
+		}
+	}
+	.related-posts {
+		h2 {
+			font-weight: 700;
+			font-size: 18px;
+			text-align: left;
+		}
+		a {
+			text-decoration: none;
+			color: $dark-gray;
+		}
+		.post-thumbnail {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			margin-top: 16px;
+
+			.thumbnail-image {
+				flex-shrink: 0;
+				img {
+					object-fit: cover;
+					width: 70px;
+					height: 70px;
+				}
+			}
+			.thumbnail-title {
+				padding-left: 8px;
+				text-align: left;
+				font-weight: 700;
+			}
+		}
+	}
+}

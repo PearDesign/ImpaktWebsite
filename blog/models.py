@@ -11,9 +11,16 @@ from wagtail.search import index
 
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
+    subheadline = models.CharField(max_length=127)
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=True, null=True,
+        on_delete=models.SET_NULL, related_name='+')
 
     content_panels = Page.content_panels + [
-        FieldPanel('intro', classname="full")
+        FieldPanel('intro', classname="full"),
+        FieldPanel('subheadline'),
+        ImageChooserPanel('image'),
     ]
 
 
@@ -40,3 +47,14 @@ class BlogPage(Page):
         ImageChooserPanel('image'),
         StreamFieldPanel('body'),
     ]
+
+    @property
+    def siblings(self):
+        return self.get_parent().get_children().order_by('-first_published_at')
+
+    @property
+    def sidebar_intro(self):
+        if hasattr(self, 'intro'):
+            return self.intro
+        else:
+            return self.get_parent().specific.intro

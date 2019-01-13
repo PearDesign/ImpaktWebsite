@@ -1,3 +1,5 @@
+$max-width: 1183px;
+
 @import '_normalize.scss';
 @import '_colors.scss';
 @import '_fonts.scss';
@@ -5,13 +7,18 @@
 @import '_homepage.scss';
 @import '_nav.scss';
 @import '_blog.scss';
+@import '_sidebar.scss';
 
 body {
 	background-color: $white;
 	font-family: "Open Sans", sans-serif;;
 }
+a {
+	text-decoration: none;
+	color: $dark-gray;
+}
 
 .container {
-	max-width: 1183px;
+	max-width: $max-width;
 	margin: 0 auto;
 }

@@ -6,28 +6,34 @@
 {% block body_class %}template-blogpage{% endblock %}
 
 {% block content %}
-<div class='blog-header'>
-	{% if page.image %}
-	{% image page.image width-2000 %}
-	{% else %}
-	<svg class='header-image'>
-		<rect fill='#4A90E2' x='0' y='0' width='100%' height='100%'/>
-	</svg>
-	{% endif %}
-	<div class='blog-title-wrapper'>
-		<div class='blog-title'>
-			<h1>{{ page.title }}</h1>
+<div class='container blog-page'>
+	<div class='blog-header'>
+		<h1>{{ page.title }}</h1>
+		<div class='byline'>
+			<span>By {{ page.owner.full_name }}</span>
+			<time datetime='{{ page.first_published_at }}'>{{ page.first_published_at }}</time>
 		</div>
 	</div>
-</div>
 
-<div class='blog-wrapper'>
-	<div class='blog-page'>
-		<div class='blog-content'>
-			{{ page.specific.body }}
-			<p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-			</div>
-		</div>
+	{% if page.image %}
+	<div class='header-image'>
+		{% image page.image width-2000 %}
 	</div>
+	{% endif %}
+
+	<div class='blog-wrapper'>
+		<div class='blog-content'>
+			{% for item in page.body %}
+				{% if item.block_type == 'image' %}
+					{% image item.value width-2000 %}
+				{% else %}
+					{{ item }}
+				{% endif %}
+			{% endfor %}
+		</div>
+		{% include 'blog/sidebar.html' %}
+	</div>
+
+
 </div>
 {% endblock %}

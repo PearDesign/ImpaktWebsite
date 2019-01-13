@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+<a href='{% pageurl child_page %}'>
+	<div class='post-thumbnail'>
+		<div class='thumbnail-image'>
+			{% if child_page.specific.image %}
+				{% image child_page.specific.image fill-200x200 %}
+			{% endif %}
+		</div>
+		<div class='thumbnail-title'>
+			{{ child_page.title }}
+		</div>
+	</div>
+</a>
