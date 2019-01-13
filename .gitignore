@@ -1,5 +1,6 @@
 # Development
 *.swp
+backend/secrets.py
 
 # Python
 venv/
