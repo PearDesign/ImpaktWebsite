@@ -1,0 +1,44 @@
+.blog-index-page {
+	img {
+		object-fit: cover;
+		width: 100%;
+	}
+	.header {
+		background-fit: cover;
+		background-position: center center;
+		color: $white;
+		height: 40vh;
+		text-align: center;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		h2.subheadline {
+			font-size: 21px;
+		}
+	}
+
+	.blog-tiles {
+		display: flex;
+		flex-wrap: wrap;
+
+		.tile {
+			box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+			box-sizing: border-box;
+			max-width: 350px;
+			margin: 16px;
+			img {
+				width: 350px;
+				height: 200px;
+			}
+			h2, h3 {
+				padding: 0px 16px
+			}
+
+			h2 {
+				font-size: 18px;
+				height: 60px;
+			}
+		}
+	}
+}
