@@ -4,11 +4,16 @@ from django.utils.text import slugify
 
 class Metric(models.Model):
     positive_image = models.ImageField(
+        blank=True, null=True,
         verbose_name='Positive Image',
         help_text='Icon to display when a company scores positively on this metric')
     negative_image = models.ImageField(
+        blank=True, null=True,
+        verbose_name='Negative Image',
         help_text='Icon to display when a company scores negatively on this metric')
     neutral_image = models.ImageField(
+        blank=True, null=True,
+        verbose_name='Neutral Image',
         help_text='Icon to display when a company scores neutrally on this metric')
     parent = models.ForeignKey(
         'self',

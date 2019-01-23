@@ -8,8 +8,11 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
+from public.mixins import MenuMixin
+from public.utils import get_menu_items
 
-class BlogIndexPage(Page):
+
+class BlogIndexPage(MenuMixin, Page):
     intro = RichTextField(blank=True)
     subheadline = models.CharField(max_length=127)
     image = models.ForeignKey(
@@ -23,8 +26,15 @@ class BlogIndexPage(Page):
         ImageChooserPanel('image'),
     ]
 
+    parent_page_types = ['public.HomePage']
 
-class BlogPage(Page):
+    def get_context(self, request):
+        context = super().get_context(request)
+        context['menuitems'] = get_menu_items()
+        return context
+
+
+class BlogPage(MenuMixin, Page):
     body = StreamField([
         ('heading', blocks.CharBlock(classname='full title')),
         ('paragraph', blocks.RichTextBlock()),
@@ -48,6 +58,8 @@ class BlogPage(Page):
         StreamFieldPanel('body'),
     ]
 
+    parent_page_types = ['blog.BlogIndexPage']
+
     @property
     def siblings(self):
         return self.get_parent().get_children().order_by('-first_published_at')
@@ -58,3 +70,8 @@ class BlogPage(Page):
             return self.intro
         else:
             return self.get_parent().specific.intro
+
+    def get_context(self, request):
+        context = super().get_context(request)
+        context['menuitems'] = get_menu_items()
+        return context
