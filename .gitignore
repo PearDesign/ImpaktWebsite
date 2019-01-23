@@ -2,6 +2,14 @@
 *.swp
 backend/secrets.py
 
+# Production
+.bash_history
+.ssh
+.cache
+.viminfo
+logs
+static
+
 # Python
 venv/
 *.pyc
