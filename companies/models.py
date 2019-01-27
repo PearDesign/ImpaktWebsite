@@ -33,6 +33,10 @@ class Company(models.Model):
         db_index=True, unique=True,
         null=True, blank=True)
     logo = models.ImageField(null=True, blank=True)
+    sustainalytics_id = models.IntegerField(
+        null=True, blank=True,
+        unique=True)
+
     slug = models.CharField(max_length=255, db_index=True, editable=False, unique=True)
 
     class Meta:
@@ -63,12 +67,20 @@ class Assessment(models.Model):
         help_text='Link users to more info about why Impakt gave this assessment')
     metric = models.ForeignKey('companies.Metric', on_delete=models.CASCADE)
     sentiment = models.CharField(
-        max_length=15, db_index=True,
+        max_length=63, db_index=True,
         choices=(
             ('positive', 'Positive'),
             ('negative', 'Negative'),
+            ('strongly_negative', 'Strongly Negative'),
             ('neutral', 'Neutral'))
         )
 
     def __str__(self):
         return f"{self.company} {self.metric}"
+
+
+class Incident(models.Model):
+    '''Qualitative assessment for a given metric in response to a specific incident'''
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    metric = models.ForeignKey(Metric, on_delete=models.CASCADE)
+    text = models.TextField()
