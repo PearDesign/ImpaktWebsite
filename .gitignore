@@ -9,6 +9,7 @@ backend/secrets.py
 .viminfo
 logs
 static
+STATICROOT/
 
 # Python
 venv/
