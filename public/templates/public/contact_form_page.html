@@ -1,0 +1,23 @@
+{% extends 'public/base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<div class='contact-header'>
+	<h1>Contact</h1>
+</div>
+
+<div class='contact-wrapper'>
+	<div class='contact-text'>
+		<h2>We'd love to hear from you!</h2>
+		<p>Impakt is a team effort! We love getting feedback and keeping in touch.</p>
+		<p>If you have any question about our platform, our mission, or next steps—or if you juts want to say hi—give us a shout!</p>
+	</div>
+	<div class='contact-form'>
+		<form action="{% pageurl page %}" method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type='submit'>
+		</form>
+	</div>
+</div>
+{% endblock %}

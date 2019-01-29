@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
 
+    'anymail',
     'modelcluster',
     'taggit',
 
@@ -149,3 +150,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'STATICROOT')
 
 # Wagtail
 WAGTAIL_SITE_NAME = 'Impakt'
+
+# Mail sending
+ANYMAIL = {
+    'MAILGUN_API_KEY': SECRETS.get('MAILGUN_API_KEY', ''),
+    'MAILGUN_SENDER_DOMAIN': 'mg.impakt.app',
+}
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+DEFAULT_FROM_EMAIL = 'submissions@impakt.app'
