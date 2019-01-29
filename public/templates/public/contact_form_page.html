@@ -14,6 +14,7 @@
 		{% endif %}
 	</div>
 	<div class='contact-form'>
+	{% block form_area %}
 		{{ page.intro|safe }}
 		<hr>
 		<form action="{% pageurl page %}" method="POST">
@@ -21,6 +22,7 @@
 			{{ form.as_p }}
 			<input type='submit'>
 		</form>
+	{% endblock %}
 	</div>
 </div>
 {% endblock %}

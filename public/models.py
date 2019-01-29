@@ -50,4 +50,5 @@ class ContactFormPage(MenuMixin, AbstractEmailForm):
 
     def get_context(self, request):
         context = super().get_context(request)
+        context['menuitems'] = get_menu_items()
         return context

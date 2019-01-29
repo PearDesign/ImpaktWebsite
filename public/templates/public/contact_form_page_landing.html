@@ -1,1 +1,5 @@
 {% extends 'public/contact_form_page.html' %}
+
+{% block form_area %}
+{{ page.thank_you_text|safe }} 
+{% endblock %}

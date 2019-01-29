@@ -8,7 +8,9 @@
 
 {% block content %}
 <div class='blog-index-page'>
-	<div class='header' style="background-image: url('{{ page.image.file.url }}');">
+	{% image page.image width-2000 as backgroundImage %}
+	<div class='header'
+			 style="background-image: url('{{ backgroundImage.url }}');">
 		<div>
 			<h1>{{ page.title }}</h1>
 			<h2>{{ page.subheadline }}</h2>
