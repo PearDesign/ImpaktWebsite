@@ -3,47 +3,40 @@
 
 {% block content %}
 <div class='homepage-hero'>
-	<img class='hero-image' src='{% static 'images/homepageBackground.png' %}'/>
-	<div class='hero-overlay'>
-		<div>
-			<img class='overlay-logo' src='{% static 'icons/logoBlueWhite.svg' %}'/>
-			<h1>One-Click Ethical Shopper</h1>
+	<div class=''>
+		<div class='hero__text'>
+			<h1>Your <span>ethical</span> shopping companion</h1>
+			<p>Impakt helps you align your online shopping to your values and write web copy, particularly when you are trying to put temporary content down.</p>
+			<a href="#" class="button--primary">Add to Chrome</a>
+		</div>
+		<div class="hero__image">
+			<img src='{% static 'images/screenshots/knowWho.png' %}'/>
 		</div>
 	</div>
 </div>
 
-<section class='homepage-container know-who'>
+<section class='homepage-container media'>
 	<div class='section-content'>
-		<img src='{% static 'images/screenshots/knowWho.png' %}'/>
-		<div class='container-text'>
-			<div>
-				<h2>Know Who You're Buying From...</h2>
-				<p>View any company's sustainability, labor, and lobbying practices on the go.</p>
-			</div>
+		<div class='media__text'>
+			<h2 class='media__quote'>“A really awesome quote from media coverage.”</h2>
+			<p>- Fast Company</p>
+		</div>
+		<div class="media__sources">
+			<span>logo</span>
+			<span>logo</span>
+			<span>logo</span>
+			<span>logo</span>
 		</div>
 	</div>
 </section>
 
-<section class='homepage-container purchases'>
-	<div class='section-content'>
-		<div class='container-text'>
-			<div>
-				<h2>Purchases You Can Believe In...</h2>
-				<p>One-click alternative product recommendations</p>
-			</div>
-		</div>
-		<img src='{% static 'images/screenshots/alternativeProducts.png' %}'/>
-	</div>
-</section>
 
-<section class='homepage-container contact'>
-	<div class='section-content'>
-		<div class='container-text'>
-			<div>
-				<h2>Get in touch to learn more.</h2>
-				<a class='link-btn' href='/contact'>Contact</a>
-			</div>
-		</div>
+<section class='cta'>
+	<div class='cta__container'>
+		<h4>Tousands of members are already making impakt.</h4>
+		<h2>Join today and demand really good web copy.</h2>
+		<a href="#" class="button--test">Add to Chrome</a>
+		<p><small>(It's totally free)</small></p>
 	</div>
 </section>
 
