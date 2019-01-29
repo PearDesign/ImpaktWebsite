@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'debug_toolbar',
 
+    'easy_thumbnails',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
