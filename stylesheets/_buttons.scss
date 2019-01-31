@@ -9,7 +9,7 @@
     text-align: center;
     position: relative;
 }
-button:hover {
+.button:hover {
     cursor: pointer;
     box-shadow: 0 2px 3px $shadow;
 }
@@ -22,4 +22,17 @@ button:hover {
 .button--secondary{
     background: $secondary-light-blue;
     color: $white;
+}
+.button.add--small {
+    background-color: $blue;
+    display: inline-flex;
+    box-sizing: border-box;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 24px 9px;
+    border-radius: 16px;
+    margin: 8px auto;
+    font-size: 12px;
+    font-family: "OpenSans--Bold";
 }

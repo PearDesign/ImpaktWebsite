@@ -3,6 +3,7 @@ $max-width: 1183px;
 @import '_normalize.scss';
 @import '_colors.scss';
 @import '_fonts.scss';
+@import '_base.scss';
 @import '_buttons.scss';
 @import '_footer.scss';
 @import '_homepage.scss';
@@ -11,9 +12,12 @@ $max-width: 1183px;
 @import '_blog_index.scss';
 @import '_sidebar.scss';
 
+html {
+	overflow-y: scroll;
+}
 body {
 	background-color: $white;
-	font-family: "Open Sans", sans-serif;;
+	font-family: "Open Sans", sans-serif;
 }
 a {
 	text-decoration: none;
@@ -23,4 +27,10 @@ a {
 .container {
 	max-width: $max-width;
 	margin: 0 auto;
+}
+
+p {
+	line-height: 1.6;
+	font-size: 18px;
+	color: #3E3A40;
 }

@@ -153,13 +153,11 @@
 	position: relative;
 
 	.cta__container{
-		background: rgba(255,0,0,0.1);
-		margin: auto;
+		margin: 0 auto;
 
 
-		.button--test {
-			margin: 100px !important;
-			border: 1px solid red;
+		.button--wrap {
+			margin: 4em;
 		}
 	}
 
