@@ -12,16 +12,26 @@
 	<div class='header'
 			 style="background-image: url('{{ backgroundImage.url }}');">
 		<div>
-			<h1>{{ page.title }}</h1>
-			<h2>{{ page.subheadline }}</h2>
+			<h1 class="headline">{{ page.headline }}</h1>
+			<h2 class="subheadline">{{ page.subheadline }}</h2>
 		</div>
 	</div>
-	
+	<div class="categories">		
+		{% for category in categories %}
+			<a href="/blog?category={{category.id}}">{{ category.name }}</a>
+		{% endfor %}
+	</div>
 	<div class='container'>
 		<div class='blog-tiles'>
-			{% for post in page.get_children %}
+			{% for post in blog_posts %}
 			<a href='{% pageurl post %}' class='tile'>
-				{% image post.specific.image max-2000x2000 %}
+				<!--
+					{% image post.specific.image max-2000x2000 %}
+				-->
+				<div class="tile__image" style="background-image: url('/media/images/{{ post.specific.image }}');" >
+					<span class="">{{ post.category.name }}</span>
+				</div>
+
 				<h2>{{ post.title }}</h2>
 				<h3>By {{ page.owner.full_name }}</h3>
 			</a>

@@ -25,6 +25,7 @@ pyflakes==2.0.0
 python-dateutil==2.7.5
 pytz==2018.9
 requests==2.21.0
+sentry-sdk==0.7.1
 six==1.12.0
 sqlparse==0.2.4
 Unidecode==1.0.23

@@ -3,47 +3,37 @@
 
 {% block content %}
 <div class='homepage-hero'>
-	<img class='hero-image' src='{% static 'images/homepageBackground.png' %}'/>
-	<div class='hero-overlay'>
-		<div>
-			<img class='overlay-logo' src='{% static 'icons/logoBlueWhite.svg' %}'/>
-			<h1>One-Click Ethical Shopper</h1>
+	<div class=''>
+		<div class='hero__text'>
+			<h1>Your <span>ethical</span> shopping companion</h1>
+			<p>Impakt helps you align your online shopping to your values. It's a browser extension that keeps you informed about when companies fall short of ethical standards, and lets you adjust your purchasing patterns accordingly.</p>
+			<a href="#" class="button--primary">Add to Chrome</a>
+		</div>
+		<div class="hero__image">
+			<img src='{% static 'images/screenshots/knowWho.png' %}'/>
 		</div>
 	</div>
 </div>
 
-<section class='homepage-container know-who'>
+<section class='homepage-container media'>
 	<div class='section-content'>
-		<img src='{% static 'images/screenshots/knowWho.png' %}'/>
-		<div class='container-text'>
-			<div>
-				<h2>Know Who You're Buying From...</h2>
-				<p>View any company's sustainability, labor, and lobbying practices on the go.</p>
-			</div>
+		<div class='media__text'>
+			<h2 class='media__quote'>“This Browser Extension Will Make You A More Ethical Shopper.”</h2>
+			<p>- Fast Company</p>
 		</div>
+		<img class='media-sources' src='{% static 'logos/logos.png' %}'/>
 	</div>
 </section>
 
-<section class='homepage-container purchases'>
-	<div class='section-content'>
-		<div class='container-text'>
-			<div>
-				<h2>Purchases You Can Believe In...</h2>
-				<p>One-click alternative product recommendations</p>
-			</div>
-		</div>
-		<img src='{% static 'images/screenshots/alternativeProducts.png' %}'/>
-	</div>
-</section>
 
-<section class='homepage-container contact'>
-	<div class='section-content'>
-		<div class='container-text'>
-			<div>
-				<h2>Get in touch to learn more.</h2>
-				<a class='link-btn' href='/contact'>Contact</a>
-			</div>
+<section class='cta'>
+	<div class='cta__container'>
+		<h4>Thousands of members are already making an Impakt.</h4>
+		<h2>Install the extension today, and start getting the information you need to shop online.</h2>
+		<div class="button--wrap">
+			<a href="#" class="button--secondary">Add to Chrome</a>
 		</div>
+		<p><small>(It's totally free)</small></p>
 	</div>
 </section>
 

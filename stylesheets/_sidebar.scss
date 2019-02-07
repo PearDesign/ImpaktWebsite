@@ -1,14 +1,17 @@
 .sidebar {
-	position: sticky;
 	flex-shrink: 0;
 	padding: 0px 32px;
-	width: 240px;
+	display: flex;
+	flex-direction: column;
+	max-width: 280px;
 	.promo {
-		font-weight: 700;
 		font-size: 15px;
 		padding: 32px 0px;
 		border-bottom: 1px #DDD solid;
 		border-top: 1px #DDD solid;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		.description {
 			text-align: center;
 		}
@@ -16,7 +19,8 @@
 			display: block;
 		}
 
-		a {
+		/*
+		.button {
 			background-color: $blue;
 			display: block;
 			box-sizing: border-box;
@@ -29,6 +33,7 @@
 			border-radius: 16px;
 			margin: 8px auto;
 		}
+		*/
 	}
 	.related-posts {
 		h2 {
@@ -43,7 +48,6 @@
 		.post-thumbnail {
 			display: flex;
 			justify-content: left;
-			align-items: center;
 			margin-top: 16px;
 
 			.thumbnail-image {
@@ -58,6 +62,7 @@
 				padding-left: 8px;
 				text-align: left;
 				font-weight: 700;
+				line-height: 1.4;
 			}
 		}
 	}

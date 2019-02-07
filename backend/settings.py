@@ -1,5 +1,7 @@
 import os
+import sentry_sdk
 
+from sentry_sdk.integrations.django import DjangoIntegration
 from .secrets import SECRETS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -159,3 +161,8 @@ ANYMAIL = {
 }
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 DEFAULT_FROM_EMAIL = 'submissions@impakt.app'
+
+sentry_sdk.init(
+    dsn=SECRETS['SENTRY_DSN'],
+    integrations=[DjangoIntegration()]
+)

@@ -1,20 +1,14 @@
 footer {
-	border-top: 1px solid #e5e5e5;
-	padding: 32px;
-
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	.contact-item {
-		align-items: center;
+	background: $secondary-light-blue;
+	padding: 40px 16px;
+	.footer__bottom {
+		color: $white;
 		display: flex;
-		justify-content: center;
-		text-align: center;
-		img {
-			display: block;
-			object-fit: contain;
-			height: 60px;
+		width: 100%;
+		justify-content: space-between;
+
+		a {
+			color: $white;
 		}
 	}
 }

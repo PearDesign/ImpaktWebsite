@@ -1,0 +1,38 @@
+.button--primary, 
+.button--secondary {
+    padding: 16px 60px 18px;
+    border: 0;
+    border-radius: 50px;
+    color: $white;
+    display: inline;
+    max-width: 200px;
+    text-align: center;
+    position: relative;
+}
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 3px $shadow;
+}
+
+.button--primary {
+    background: $primary;
+    color: $white;
+    font-size: 15px;
+}
+.button--secondary{
+    background: $secondary-light-blue;
+    color: $white;
+}
+.button.add--small {
+    background-color: $blue;
+    display: inline-flex;
+    box-sizing: border-box;
+    color: $white;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 24px 9px;
+    border-radius: 16px;
+    margin: 8px auto;
+    font-size: 12px;
+    font-family: "OpenSans--Bold";
+}

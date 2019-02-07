@@ -4,18 +4,45 @@
 		width: 100%;
 	}
 	.header {
-		background-fit: cover;
+		background-size: cover;
 		background-position: center center;
+		background-color: rgba(34,47,64,0.6);
+		background-blend-mode: overlay;
 		color: $white;
 		height: 40vh;
 		text-align: center;
-
+		
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		h1.headline {
+			font-family: "OpenSans--Bold";
+			font-size: 36px;
+		}
 		h2.subheadline {
 			font-size: 21px;
 		}
+	}
+
+	.categories {
+		height: 56px;
+		display: flex;
+		border-bottom: 1px solid $line--gray;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		
+		a {
+			margin: 0 24px;
+			font-family: "OpenSans--Bold";
+			color: $primary-text;
+			letter-spacing: 0.15;
+
+			&:hover {
+				color: $secondary-light-blue;
+			}
+		}
+		
 	}
 
 	.blog-tiles {
@@ -23,8 +50,10 @@
 		flex-wrap: wrap;
 
 		.tile {
-			box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+			box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+			border-radius: 4px;
 			box-sizing: border-box;
+			width: 100%;
 			max-width: 350px;
 			margin: 16px;
 			img {
@@ -39,6 +68,13 @@
 			h2 {
 				font-size: 18px;
 				height: 60px;
+			}
+
+			.tile__image {
+				width: 100%;
+				padding-bottom: 50%;
+				background-position: center center;
+				background-size: cover;	 
 			}
 		}
 	}
