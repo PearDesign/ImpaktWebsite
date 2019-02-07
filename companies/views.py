@@ -11,6 +11,13 @@ class CompanyViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CompanySerializer
     queryset = Company.objects.all()
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.request.GET.get('ASINList'):
+            ASINList = self.request.GET.getlist('ASINList')
+            queryset = queryset.filter(ASIN__in=ASINList)
+        return queryset
+
     def retrieve(self, request, pk=None):
         try:
             company = Company.objects.get(ASIN=pk)

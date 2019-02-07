@@ -11,8 +11,10 @@
 		max-width: 100%;
 	}
 
-	display: flex;
-	justify-content: space-between;
+	@media(min-width: 992px){
+		display: flex;
+		justify-content: space-between;
+	}
 
 	.contact-text, .contact-form {
 		box-sizing: border-box;
@@ -24,6 +26,10 @@
 	.contact-form {
 		label {
 			font-weight: 700;
+		}
+		textarea {
+			margin-top: 8px;
+			width: 100%;
 		}
 		ol, ul {
 			list-style-type: none;

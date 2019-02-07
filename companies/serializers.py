@@ -6,7 +6,7 @@ from companies.models import Assessment, Company, Metric
 class MetricSerializer(serializers.ModelSerializer):
 
     class Meta:
-        exclude = ['id']
+        fields = ['text']
         model = Metric
 
 
