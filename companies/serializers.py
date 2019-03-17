@@ -14,7 +14,7 @@ class AssessmentSerializer(serializers.ModelSerializer):
     metric = MetricSerializer(read_only=True)
 
     class Meta:
-        exclude = ['id']
+        fields = '__all__'
         model = Assessment
 
 
