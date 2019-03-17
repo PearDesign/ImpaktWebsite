@@ -6,7 +6,7 @@ from companies.models import Assessment, Company, Metric
 class MetricSerializer(serializers.ModelSerializer):
 
     class Meta:
-        fields = ['text']
+        fields = ['positive_image', 'negative_image', 'text']
         model = Metric
 
 
