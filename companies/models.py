@@ -25,6 +25,9 @@ class Metric(models.Model):
     def __str__(self):
         return self.text
 
+    class Meta:
+        ordering = ['text']
+
 
 class Company(models.Model):
     name = models.CharField(max_length=255, db_index=True)
@@ -40,6 +43,7 @@ class Company(models.Model):
     slug = models.CharField(max_length=255, db_index=True, editable=False, unique=True)
 
     class Meta:
+        ordering = ("name", )
         verbose_name_plural = 'Companies'
 
     def __str__(self):
@@ -56,7 +60,8 @@ class Assessment(models.Model):
         max_length=127, db_index=True,
         choices=(
             ('impakt', 'Directly-supplied by Impakt researchers'),
-            ('sustainalytics', 'Sustainalytics')
+            ('sustainalytics', 'Sustainalytics'),
+            ('nyu', 'NYU Researchers'),
         ),
         help_text='Where the information for this assessment came from',
         verbose_name='Data Source')

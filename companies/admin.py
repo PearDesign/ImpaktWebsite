@@ -8,11 +8,16 @@ class MetricAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Company)
-class CompanyAdmin(admin.ModelAdmin):
-    pass
-
-
 @admin.register(Assessment)
 class AssessmentAdmin(admin.ModelAdmin):
     pass
+
+
+class AssessmentInline(admin.TabularInline):
+    model = Assessment
+    extra = 1
+
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    inlines = (AssessmentInline, )

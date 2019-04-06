@@ -1,6 +1,7 @@
 # Development
 *.swp
 backend/secrets.py
+companies/fixtures/
 
 # Production
 .bash_history
