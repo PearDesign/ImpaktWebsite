@@ -16,7 +16,7 @@ gunicorn==19.9.0
 html5lib==1.0.1
 idna==2.8
 mccabe==0.6.1
-numpy==1.16.0
+numpy==1.22.0
 pandas==0.23.4
 Pillow==5.4.1
 psycopg2-binary==2.7.6.1
